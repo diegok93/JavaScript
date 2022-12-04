@@ -1,0 +1,9 @@
+Hacer un algoritmo con un condicional, un ciclo
+Armar un simulador interactivo
+
+HTML + JS
+
+utilizar funciones
+
+
+entregar 1 de las 3 que envia la profe
