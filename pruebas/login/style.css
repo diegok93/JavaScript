@@ -1,0 +1,37 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px;
+}
+
+.container-login {
+    border: 1px solid grey;
+    width: 50%;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: brown;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+#logout {
+    display: none;
+}
+
+.lista-usuarios {
+    display: none;
+    flex-direction: column;
+    
+}
+
+table {
+    border: 1px solid black;
+    text-align: center;
+}
