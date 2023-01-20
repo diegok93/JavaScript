@@ -42,47 +42,26 @@
                 <legend>Datos personales</legend>
                 <p><label for="nombre">
                     <span>¿Cómo te llamás?</span>
-                    <input type="text" id="nombre" placeholder="Escribí acá tu nombre">
+                    <input type="text" id="input-nombre" placeholder="Escribí acá tu nombre">
                 </label>
                 </p>
                 <p><label for="mail">
                     <span>¿Cómo es tu mail?</span>
-                    <input type="email" id="mail" placeholder="Escribí acá tu e-mail">
+                    <input type="email" id="input-mail" placeholder="Escribí acá tu e-mail">
                 </label>
                 </p>
                 <p><label for="edad">
                         <span>¿Qué edad tenés?</span>
-                        <input type="number" id="edad" placeholder="Escribí acá tu edad">
+                        <input type="number" id="input-edad" placeholder="Escribí acá tu edad">
                 </label>
                 </p>
             </fieldset>
-            <fieldset>
-                <legend>Sexo</legend>
-                <p><label for="hombre">Hombre</label>
-                <input type="radio" id="hombre" name="sexo" value="hombre">
-
-                <label for="mujer">Mujer</label>
-                <input type="radio" id="mujer" name="sexo" value="mujer">
-
-                <label for="indefinido">Indefinido</label>
-                <input type="radio" id="indefinido" name="sexo" value="indefinido">
-                </p>
-                
-            </fieldset>
-
-            <fieldset>
-                <legend>Términos y condiciones</legend>
-                <label for="acepta">Leí y acepto los términos y condiciones</label>
-                <input type="checkbox" id="acepta" value="1">
-                </p>
-            </fieldset>
-
             <fieldset>
                 <legend>Mensaje</legend>
                 <label for="mensaje">
                     <span>Escribenos un mensaje</span>
                     
-                    <textarea name="mensaje" rows="5" cols="40" id="mensaje"></textarea>
+                    <textarea name="mensaje" rows="5" cols="40" id="input-mensaje"></textarea>
                 </label>
             </fieldset>
             <input type="submit" value="Enviar">
@@ -99,5 +78,6 @@
 
 <script src="../js/modo-oscuro.js"></script>
 <script src="../js/contacto.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
