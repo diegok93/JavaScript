@@ -5,6 +5,10 @@
   margin: 0px;
   box-sizing: border-box; }
 
+body{
+  background-color: white;
+}
+
 /*
 font-family: 'Quicksand', sans-serif;
 font-family: 'Reem Kufi Fun', sans-serif;
