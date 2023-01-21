@@ -1,34 +1,49 @@
-const contenedorCards = document.querySelector(".contFlex")
+const contenedorCardsPromos = document.querySelector(".swiper-wrapper")
 
 let carrito = []
 
-// https://63bf5764e262345656e7a5a2.mockapi.io
-
 const cardsAHtml = ( array ) => {
-    const arrayReducido = array.reduce ( (acc, element) => {
+    const arrayFiltrado = array.filter ( (curr) => {
+        return curr.promocion === true
+    })
+    const arrayReducido = arrayFiltrado.reduce ( (acc, element) => {
         return acc + `
-        <article class="box" id=${element.id}>
-
-            <div class="box box1">
-                <img src=${element.img} alt=${element.destino}>
-            </div>
-            
-            <div class="box box2">
-                <h2> ${element.destino} </h2>
-
-                <h3> ${element.desc1} </h3>
-
-                <h4> USD ${element.precio} </h4>
-                <button class="boton-carrito" id=${element.id}> Agregar al carrito </button>
-            </div>
-
-        </article>
+        <div class="swiper-slide" id=${element.id}>
+            <table>
+                <tr><td>
+                    <img src=${element.img} alt=${element.destino}>
+                </td></tr>
+                <tr><td>
+                    <h3>${element.destino}</h3>
+                </td></tr>
+                <tr><td>
+                    <h4>USD ${element.precio}</h4>
+                </td></tr>
+                <tr><td>
+                    <button class="boton-carrito" id=${element.id}> Agregar al carrito </button>
+                </td></tr>
+            </table>
+        </div>
         `
     }, "")
     return arrayReducido
 }
 
-contenedorCards.innerHTML = cardsAHtml (destinos)
+contenedorCardsPromos.innerHTML = cardsAHtml (destinos)
+
+
+// Swiper JS
+var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+// Swiper JS
 
 const alLs = ( clave, valor ) => {
     return localStorage.setItem(clave, JSON.stringify(valor))
@@ -74,4 +89,3 @@ agregarAlCarrito()
 const carritoActualizado = obtenerDelLs("carrito") || []
 
 carrito = carritoActualizado
-

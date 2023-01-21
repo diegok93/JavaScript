@@ -44,4 +44,49 @@ const destinos = [
         "precio": 2100,
         "promocion": false
     },  
+    {
+        "id": 6,
+        "destino": "Paris",
+        "img": "../assets/paris.jpg",
+        "desc1": "París es la capital de Francia y su ciudad más poblada con 12.405.426 de habitantes.",
+        "desc2": "Conocida también como la «Ciudad de la Luz» (en francés, Ville lumière), es el destino turístico más visitado del mundo, con más de 42 millones de visitantes extranjeros por año.",
+        "precio": 1500,
+        "promocion": false
+    },  
+    {
+        "id": 7,
+        "destino": "Calafate",
+        "img": "../assets/calafate.jpg",
+        "desc1": "Ubicada en la ribera meridional del lago Argentino, en la región de la Patagonia, en la provincia de Santa Cruz, Argentina, a unos 80 km del glaciar Perito Moreno.",
+        "desc2": "Es la cabecera del departamento Lago Argentino.",
+        "precio": 600,
+        "promocion": true
+    },  
+    {
+        "id": 8,
+        "destino": "Iguazú",
+        "img": "../assets/iguazu.jpg",
+        "desc1": "Puerto Iguazú es una ciudad de la provincia de Misiones, en el extremo nordeste de la Argentina.",
+        "desc2": "Situada a 14 km de las cataratas del Iguazú, una de las Siete maravillas naturales del mundo.",
+        "precio": 350,
+        "promocion": true
+    },  
+    {
+        "id": 9,
+        "destino": "Machu Pichu",
+        "img": "../assets/machu-pichu.jpg",
+        "desc1": "Machu Picchu es el nombre contemporáneo que se da a una llacta —antiguo poblado incaico andino.",
+        "desc2": "Ubicada en la Cordillera Oriental del sur del Perú.",
+        "precio": 1000,
+        "promocion": true
+    },  
+    {
+        "id": 10,
+        "destino": "Rio de Janeiro",
+        "img": "../assets/rio-de-janeiro.jpg",
+        "desc1": "Fundada como São Sebastião do Rio de Janeiro, es una ciudad y capital del estado homónimo",
+        "desc2": "Es la segunda ciudad más poblada de Brasil después de São Paulo.",
+        "precio": 800,
+        "promocion": true
+    }
 ]

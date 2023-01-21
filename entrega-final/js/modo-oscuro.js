@@ -24,7 +24,9 @@ const aplicarModo = ( ) => {
         document.querySelector("aside").style.backgroundColor = "black"
         document.querySelector("main").style.backgroundColor = "black"
         document.querySelector(".contGrid").style.backgroundColor = "black"
-        document.querySelector("h1").style.color = "white"
+        
+        const h1 = document.querySelectorAll("h1")
+        h1.forEach((item) => item.style.color = "white")
 
         const h2 = document.querySelectorAll("h2")
         h2.forEach((item) => item.style.color = "white")
@@ -42,7 +44,9 @@ const aplicarModo = ( ) => {
         document.querySelector("aside").style.backgroundColor = "white"
         document.querySelector("main").style.backgroundColor = "white"
         document.querySelector(".contGrid").style.backgroundColor = "white"
-        document.querySelector("h1").style.color = "black"
+
+        const h1 = document.querySelectorAll("h1")
+        h1.forEach((item) => item.style.color = "black")
 
         const h2 = document.querySelectorAll("h2")
         h2.forEach((item) => item.style.color = "black")
