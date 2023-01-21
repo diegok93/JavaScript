@@ -11,7 +11,10 @@ const cardsAHtml = ( array ) => {
 
                 <h2> ${element.destino} </h2>
 
-                <h4> USD ${element.precio} </h4>
+                <h4> USD ${element.precio} 
+                </h4>
+
+                
 
         </article>
         `
@@ -29,11 +32,84 @@ const alLs = ( clave, valor ) => {
 const vaciarCarrito = () => {
     const botonVaciar = document.querySelector("#vaciar-carrito")
     botonVaciar.onclick = () => {
-        carrito = []
+
+        swal({
+            title: "Está seguro que desea vaciarlo?",
+            text: "El carrito se eliminará y no lo podrá volver a recuperar",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("El carrito ha sido eliminado con éxito", {
+                icon: "info",
+              });
+              carrito = []
         alLs ("carrito", carrito)
         containerCarrito.innerHTML = cardsAHtml(obtenerDelLs("carrito"))
+            } else {
+              swal("Puede seguir comprando.");
+            }
+          });
+
+        
     }
 }
 
 vaciarCarrito()
+
+const confirmarCompra = () => {
+    const botonPagar = document.querySelector("#pagar-carrito")
+    botonPagar.onclick = () => {
+        swal({
+            title: "Está seguro?",
+            text: "Realizará la compra del carrito",
+            icon: "info",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("La compra se ha realizado con éxito!", {
+                icon: "success",
+              });
+              carrito = []
+        alLs ("carrito", carrito)
+        containerCarrito.innerHTML = cardsAHtml(obtenerDelLs("carrito"))
+            } else {
+              swal("Puede seguir comprando.");
+            }
+          });
+    }
+}
+
+confirmarCompra ()
+
+
+sumarDestinos = (array) => {
+    let total = 0
+    array.forEach((element) => {
+        total = total + Number(element.precio)
+        return total
+    })
+    return total
+}
+
+function totalCarrito (array) {
+        const totalCarrito = sumarDestinos(array)
+        return `
+        <article class="boxCarrito">
+
+                <h2> TOTAL: </h2>
+
+                <h4> USD ${totalCarrito} </h4>
+
+        </article>
+        `
+    }
+
+const sumaCarrito = document.querySelector(".totalCarrito")
+sumaCarrito.innerHTML = totalCarrito(carrito)
+
 

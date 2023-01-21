@@ -2,7 +2,13 @@ const contenedorCards = document.querySelector(".contFlex")
 
 let carrito = []
 
-// https://63bf5764e262345656e7a5a2.mockapi.io
+/* fetch("https://63bf5764e262345656e7a5a2.mockapi.io/destinos") 
+.then((res) => res.json())  
+.then((data) => {
+    destinosFetch = data
+}) 
+.catch(() => console.log("Está caído MOCKAPI"))
+ */
 
 const cardsAHtml = ( array ) => {
     const arrayReducido = array.reduce ( (acc, element) => {
@@ -75,3 +81,82 @@ const carritoActualizado = obtenerDelLs("carrito") || []
 
 carrito = carritoActualizado
 
+// Ordenar por orden alfabético
+function ordenarDestino (array,orden) {
+    const arrayOrdenado = [...array]
+    if (orden) {
+        arrayOrdenado.sort((a,b) => {   
+            if (a.destino < b.destino) {
+                return -1  
+            } else if (a.destino > b.destino) {
+                return 1 
+            } else {
+                return 0  
+            }
+        })
+    } else if (!orden) {
+        arrayOrdenado.sort((a,b) => {   
+            if (a.destino > b.destino) {
+                return -1  
+            } else if (a.destino < b.destino) {
+                return 1 
+            } else {
+                return 0  
+            }
+        })
+    }
+    return arrayOrdenado
+}
+
+const filtroAZ = document.querySelector("#filtroAZ")
+const filtroZA = document.querySelector("#filtroZA")
+
+filtroAZ.onclick = () => {
+    contenedorCards.innerHTML = cardsAHtml(ordenarDestino(destinos,true))
+    agregarAlCarrito()
+}
+
+filtroZA.onclick = () => {
+    contenedorCards.innerHTML = cardsAHtml(ordenarDestino(destinos,false))
+    agregarAlCarrito()
+}
+
+// Ordernar por precio
+function ordenarPrecio (array,orden) {
+    const arrayOrdenado = [...array]
+    if (orden) {
+        arrayOrdenado.sort((a,b) => {   
+            if (a.precio < b.precio) {
+                return -1  
+            } else if (a.precio > b.precio) {
+                return 1 
+            } else {
+                return 0  
+            }
+        })
+    } else if (!orden) {
+        arrayOrdenado.sort((a,b) => {   
+            if (a.precio > b.precio) {
+                return -1  
+            } else if (a.precio < b.precio) {
+                return 1 
+            } else {
+                return 0  
+            }
+        })
+    }
+    return arrayOrdenado
+}
+
+const filtroMayorPrecio = document.querySelector("#filtroMayorPrecio")
+const filtroMenorPrecio = document.querySelector("#filtroMenorPrecio")
+
+filtroMayorPrecio.onclick = () => {
+    contenedorCards.innerHTML = cardsAHtml(ordenarPrecio(destinos,false))
+    agregarAlCarrito()
+}
+
+filtroMenorPrecio.onclick = () => {
+    contenedorCards.innerHTML = cardsAHtml(ordenarPrecio(destinos,true))
+    agregarAlCarrito()
+}

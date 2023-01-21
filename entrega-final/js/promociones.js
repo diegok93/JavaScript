@@ -57,15 +57,6 @@ const obtenerDelLs = (clave) => {
     return JSON.parse(localStorage.getItem(clave))
 }
 
-// inicio mensaje de Toastify
-const mensajeAlAgregar = ( ) => {
-    Toastify({
-        text: "Elemento agregado al carrito",
-        duration: 2000,
-        close: true
-    }).showToast()
-}
-// fin mensaje de Toastify
 
 const agregarAlCarrito = () => {
     const botonesCards = document.querySelectorAll(".boton-carrito")
@@ -73,7 +64,6 @@ const agregarAlCarrito = () => {
     
     botonesCards.forEach( boton => {
         boton.onclick = () => {
-            mensajeAlAgregar ()
             const buscarDestino = destinos.find (destino => {
                 return destino.id === Number(boton.id)
             })
