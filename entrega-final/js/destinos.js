@@ -164,3 +164,19 @@ filtroMenorPrecio.onclick = () => {
     agregarAlCarrito()
     aplicarModo()
 }
+
+// Filtro de ofertas
+function soloOfertas (array) {
+    const arrayOrdenado = array.filter ( (curr) => {
+        return curr.promocion === true
+    })
+    return arrayOrdenado
+}
+
+const filtroOfertas = document.querySelector("#filtroOfertas")
+
+filtroOfertas.onclick = () => {
+    contenedorCards.innerHTML = cardsAHtml(soloOfertas(destinos))
+    agregarAlCarrito()
+    aplicarModo()
+}

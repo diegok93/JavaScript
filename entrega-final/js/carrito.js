@@ -4,6 +4,7 @@ const obtenerDelLs = ( clave ) => {
 
 let carrito = obtenerDelLs("carrito")
 
+// Insertar cards de elementos agregados al carrito
 const cardsAHtml = ( array ) => {
     const arrayReducido = array.reduce( (acc, element ) => {
         return acc + `
@@ -29,6 +30,7 @@ const alLs = ( clave, valor ) => {
     return localStorage.setItem(clave, JSON.stringify(valor))
 }
 
+// Vaciado de carrito
 const vaciarCarrito = () => {
     const botonVaciar = document.querySelector("#vaciar-carrito")
     botonVaciar.onclick = () => {
@@ -46,6 +48,7 @@ const vaciarCarrito = () => {
                 icon: "info",
               });
               carrito = []
+              sumaCarrito.innerHTML = totalCarrito(carrito)
         alLs ("carrito", carrito)
         containerCarrito.innerHTML = cardsAHtml(obtenerDelLs("carrito"))
             } else {
@@ -57,8 +60,10 @@ const vaciarCarrito = () => {
     }
 }
 
+
 vaciarCarrito()
 
+// Confirmacion de compra
 const confirmarCompra = () => {
     const botonPagar = document.querySelector("#pagar-carrito")
     botonPagar.onclick = () => {
@@ -74,7 +79,8 @@ const confirmarCompra = () => {
               swal("La compra se ha realizado con éxito!", {
                 icon: "success",
               });
-              carrito = []
+              carrito = [];
+              sumaCarrito.innerHTML = totalCarrito(carrito)
         alLs ("carrito", carrito)
         containerCarrito.innerHTML = cardsAHtml(obtenerDelLs("carrito"))
             } else {
@@ -86,7 +92,7 @@ const confirmarCompra = () => {
 
 confirmarCompra ()
 
-
+// Sumar precios del carrito
 sumarDestinos = (array) => {
     let total = 0
     array.forEach((element) => {

@@ -1,5 +1,4 @@
 // Inicio modo oscuro
-
 const modoOscuro = document.querySelector("#oscuro")
 const modoClaro = document.querySelector("#claro")
 
