@@ -114,11 +114,13 @@ const filtroZA = document.querySelector("#filtroZA")
 filtroAZ.onclick = () => {
     contenedorCards.innerHTML = cardsAHtml(ordenarDestino(destinos,true))
     agregarAlCarrito()
+    aplicarModo()
 }
 
 filtroZA.onclick = () => {
     contenedorCards.innerHTML = cardsAHtml(ordenarDestino(destinos,false))
     agregarAlCarrito()
+    aplicarModo()
 }
 
 // Ordernar por precio
@@ -154,9 +156,11 @@ const filtroMenorPrecio = document.querySelector("#filtroMenorPrecio")
 filtroMayorPrecio.onclick = () => {
     contenedorCards.innerHTML = cardsAHtml(ordenarPrecio(destinos,false))
     agregarAlCarrito()
+    aplicarModo()
 }
 
 filtroMenorPrecio.onclick = () => {
     contenedorCards.innerHTML = cardsAHtml(ordenarPrecio(destinos,true))
     agregarAlCarrito()
+    aplicarModo()
 }

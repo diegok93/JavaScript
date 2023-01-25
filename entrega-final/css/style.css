@@ -13,6 +13,60 @@ body{
 font-family: 'Quicksand', sans-serif;
 font-family: 'Reem Kufi Fun', sans-serif;
 */
+
+/* Familia de botones*/
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 1px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+.button5 {
+  background-color: black;
+  color: white;
+  border: 1px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.botonModos {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  left: 10px;
+}
+
 nav {
   background-color: rgba(200, 200, 200, 0.5);
   padding: 5px; }
