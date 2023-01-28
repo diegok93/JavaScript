@@ -41,6 +41,44 @@ font-family: 'Reem Kufi Fun', sans-serif;
   color: white;
 }
 
+.boton-carrito {
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+
+  background-color: white;
+  color: black;
+  border: 1px solid green;
+}
+
+.boton-carrito:hover {background-color: green;}
+
+.boton-eliminar {
+  padding: 4px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+
+  background-color: white;
+  color: black;
+  border: 1px solid red;
+}
+
+.boton-eliminar:hover {background-color: red;}
+
 .button4 {
   background-color: white;
   color: black;
@@ -118,7 +156,7 @@ main article {
   .contCarrito {
     display: flex;
     justify-content:flex-start;
-    gap: 5px 10px;
+    gap: 5px 5px;
     align-items:flex-start;
     flex-direction: column;
     flex-wrap: wrap;
@@ -206,7 +244,7 @@ h3 {
 
   .boxCarrito {
     width: 150px;
-    height: 55px;
+    height: 60px;
     margin-left: 20px;
     margin-top: 5px;
     flex-direction: column;

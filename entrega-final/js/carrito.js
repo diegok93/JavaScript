@@ -13,6 +13,7 @@ const cardsAHtml = ( array ) => {
                 <h2> ${element.destino} </h2>
 
                 <h4> USD ${element.precio} 
+                <button class="boton-eliminar" onclick="eliminarElemento(${element.id})">X</button>
                 </h4>
 
                 
@@ -20,15 +21,32 @@ const cardsAHtml = ( array ) => {
         </article>
         `
     }, "")
+    
     return arrayReducido
 }
 
 const containerCarrito = document.querySelector(".contCarrito")
 containerCarrito.innerHTML = cardsAHtml(obtenerDelLs("carrito"))
 
+
 const alLs = ( clave, valor ) => {
     return localStorage.setItem(clave, JSON.stringify(valor))
 }
+
+
+//Eliminar elemento del carrito
+function eliminarElemento(id) {
+  let elementoEliminar = carrito.find(elemento => elemento.id === id);
+  let indice = carrito.indexOf(elementoEliminar);
+  carrito.splice(indice, 1);
+  alLs("carrito", carrito);
+  containerCarrito.innerHTML = cardsAHtml(carrito);
+  sumaCarrito.innerHTML = totalCarrito(carrito)
+  aplicarModo()
+
+}
+
+
 
 // Vaciado de carrito
 const vaciarCarrito = () => {
