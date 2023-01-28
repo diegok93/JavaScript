@@ -69,6 +69,7 @@ const vaciarCarrito = () => {
               sumaCarrito.innerHTML = totalCarrito(carrito)
         alLs ("carrito", carrito)
         containerCarrito.innerHTML = cardsAHtml(obtenerDelLs("carrito"))
+        aplicarModo()
             } else {
               swal("Puede seguir comprando.");
             }
@@ -101,6 +102,7 @@ const confirmarCompra = () => {
               sumaCarrito.innerHTML = totalCarrito(carrito)
         alLs ("carrito", carrito)
         containerCarrito.innerHTML = cardsAHtml(obtenerDelLs("carrito"))
+        aplicarModo()
             } else {
               swal("Puede seguir comprando.");
             }
