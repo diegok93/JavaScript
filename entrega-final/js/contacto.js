@@ -27,7 +27,7 @@ form.onsubmit = (event) => {
         edadUser: edad.value,
         mensajeUser: mensaje.value,
     })
-    console.log(notas) 
+    
     swal("Gracias!", "Tu mensaje ha sido enviado.", "success"); 
 
     }

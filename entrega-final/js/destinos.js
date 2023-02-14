@@ -60,7 +60,6 @@ const mensajeAlAgregar = ( ) => {
 
 const agregarAlCarrito = () => {
     const botonesCards = document.querySelectorAll(".boton-carrito")
-    console.log(botonesCards)
     
     botonesCards.forEach( boton => {
         boton.onclick = () => {
@@ -69,7 +68,6 @@ const agregarAlCarrito = () => {
                 return destino.id === Number(boton.id)
             })
             pushearAArray(carrito, buscarDestino)
-            console.log(carrito)
             alLs("carrito", carrito)
         }
 })
